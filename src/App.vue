@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     direction () {
-      return this.$store.state.slide
+      return this.$store.state.app.slide
     }
   }
 }
