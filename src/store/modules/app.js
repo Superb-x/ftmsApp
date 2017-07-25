@@ -3,14 +3,31 @@
  */
 const app = {
   state: {
-    slide: 'slideLeft'
+    slide: 'slideLeft',
+    bannerCached: false
   },
   mutations: {
-    right (state) {
-      state.slide = 'slideRight'
+    TOGGLE_SLIDE: state => {
+      if (state.slide === 'slideLeft') {
+        state.slide = 'slideRight'
+      } else {
+        state.slide = 'slideLeft'
+      }
     },
-    left (state) {
-      state.slide = 'slideLeft'
+    BANNER_CACHED: state => {
+      if (state.bannerCached === true) {
+        state.bannerCached = false
+      } else {
+        state.bannerCached = true
+      }
+    }
+  },
+  actions: {
+    ToggleDirect: ({ commit }) => {
+      commit('TOGGLE_SLIDE')
+    },
+    ToggleCached: ({ commit }) => {
+      commit('BANNER_CACHED')
     }
   }
 }

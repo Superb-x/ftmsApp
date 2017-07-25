@@ -2,15 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // component
-import Home from '@/views/Home'
-import Exhibition from '@/views/Exhibition'
-import Car from '@/views/Car'
-import Service from '@/views/Service'
-import My from '@/views/My'
+import Home from '@/views/Home/index'
+import Exhibition from '@/views/Exhibition/index'
+import Car from '@/views/Car/index'
+import Service from '@/views/Service/index'
+import My from '@/views/My/index'
+import Panel from '@/components/panel'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -36,6 +38,11 @@ export default new Router({
       path: '/my',
       name: 'My',
       component: My
+    },
+    {
+      path: '/panel/:name',
+      name: 'Panel',
+      component: Panel
     }
   ]
 })

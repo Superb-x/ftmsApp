@@ -50,9 +50,9 @@
     methods: {
       focus: function (index) {
         if (index > this.isActive) {
-          this.$store.commit('right')
+          this.$store.dispatch('ToggleDirect')
         } else {
-          this.$store.commit('left')
+          this.$store.dispatch('ToggleDirect')
         }
         this.isActive = index
       }

@@ -1,9 +1,9 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" class="cont">
     <!-- slides -->
-    <swiper-slide><img src="static/banner.jpg" alt=""></swiper-slide>
-    <swiper-slide><img src="static/banner2.jpg" alt=""></swiper-slide>
-    <swiper-slide><img src="static/banner3.jpg" alt=""></swiper-slide>
+    <template v-for="item in bannerList">
+      <swiper-slide><img :src="item.thumb" alt=""></swiper-slide>
+    </template>
     <!-- Optional controls -->
     <div class="swiper-pagination" slot="pagination" style="bottom: -10px"></div>
   </swiper>
@@ -12,6 +12,13 @@
 <script>
   export default {
     name: 'carrousel',
+    props: {
+      bannerList: {
+        type: Array,
+        default: [
+            {thumb: 'static/banner.jpg'}, {thumb: 'static/banner2.jpg'}, {thumb: 'static/banner3.jpg'}]
+      }
+    },
     data () {
       return {
         swiperOption: {
