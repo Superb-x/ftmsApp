@@ -7,7 +7,9 @@
         <span class="badge" v-if="hasinfo"></span>
       </div>
     </div>
-    <Banner :bannerList="banner"></Banner>
+    <keep-alive>
+      <Banner :bannerList="banner"></Banner>
+    </keep-alive>
     <div class="new-banner">
       <b class="news icon-inform">新闻资讯</b>
       <router-link to="" class="link">
@@ -123,6 +125,7 @@
         getWeather().then(res => {
           this.weather.city = res.data.data.city
           this.weather.wearthimg = res.data.data.wearthimg
+          this.$store.dispatch('ToggleCached')
         })
       },
       getStatus () {
@@ -134,7 +137,9 @@
       }
     },
     created () {
-      this.fetchBanner()
+      if (!this.$store.state.app.bannerCached) {
+        this.fetchBanner()
+      }
       this.fetchWeather()
       this.getStatus()
     }
