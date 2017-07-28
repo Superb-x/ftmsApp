@@ -10,7 +10,9 @@
     <Banner :bannerList="banner"></Banner>
     <div class="new-banner">
       <b class="news icon-inform">新闻资讯</b>
-      <router-link to="" class="link">{{msg}}</router-link>
+      <router-link to="" class="link">
+        {{msg}}
+      </router-link>
     </div>
     <div class="navi">
       <ul>
@@ -28,11 +30,33 @@
       <span class="float-right">管理></span>
     </div>
     <div class="panel">
-      <div class="left">
-
+      <div class="left backconfig" :style="backgroundObject.img1">
+        <router-link to="" class="item s-item">
+          <p>预约保养</p>
+          <p>在线预约更方便</p>
+        </router-link>
       </div>
       <div class="right">
-
+        <div class="r-top" :style="backgroundObject.img3">
+          <router-link to="" class="item s-item-1">
+            <p>预约保养</p>
+            <p>在线预约更方便</p>
+          </router-link>
+        </div>
+        <div class="row">
+          <div class="inline-block item-2 shortbox" :style="backgroundObject.img4">
+            <router-link to="" class="item s-item-2">
+              <p>预约保养</p>
+              <p>在线预约更方便</p>
+            </router-link>
+          </div>
+          <div class="inline-block item-3 shortbox" :style="backgroundObject.img8">
+            <router-link to="" class="item s-item-3">
+              <p>预约保养</p>
+              <p>在线预约更方便</p>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -41,6 +65,7 @@
 <script>
   import Banner from '@/components/banner'
   import { getBanner, getWeather, getInfoStatus } from '@/api/home'
+  import imgDate from './imageData'
   export default {
     name: 'Home',
     data () {
@@ -77,7 +102,8 @@
         weather: {
           city: '',
           wearthimg: ''
-        }
+        },
+        backgroundObject: imgDate
       }
     },
     components: {
@@ -100,7 +126,7 @@
         })
       },
       getStatus () {
-        getInfoStatus().then(res => {
+        getInfoStatus('a168eeeb39ea822439b064865bc8711e').then(res => {
           if (res.data.data.count >= 1) {
             this.hasinfo = true
           }
@@ -110,6 +136,7 @@
     created () {
       this.fetchBanner()
       this.fetchWeather()
+      this.getStatus()
     }
   }
 </script>

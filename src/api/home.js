@@ -21,6 +21,6 @@ export function getInfoStatus (token) {
   return fetch({
     url: '/v1/user/userMessageUnread',
     method: 'GET',
-    data: {token: token}
+    params: {token: token, t: new Date().getTime()}
   })
 }

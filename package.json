@@ -20,6 +20,7 @@
     "js-cookie": "^2.1.4",
     "node-sass": "^4.5.3",
     "scss-loader": "^0.0.1",
+    "url-loader": "^0.5.9",
     "vue": "^2.1.0",
     "vue-awesome-swiper": "^2.3.8",
     "vue-loader": "^11.3.4",
