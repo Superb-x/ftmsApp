@@ -34,28 +34,28 @@
     <div class="panel">
       <div class="left backconfig" :style="backgroundObject.img1">
         <router-link to="" class="item s-item">
-          <p>预约保养</p>
-          <p>在线预约更方便</p>
+          <p>{{services[0].title}}</p>
+          <p></p>
         </router-link>
       </div>
       <div class="right">
         <div class="r-top" :style="backgroundObject.img3">
           <router-link to="" class="item s-item-1">
-            <p>预约保养</p>
-            <p>在线预约更方便</p>
+            <p></p>
+            <p></p>
           </router-link>
         </div>
         <div class="row">
           <div class="inline-block item-2 shortbox" :style="backgroundObject.img4">
             <router-link to="" class="item s-item-2">
-              <p>预约保养</p>
-              <p>在线预约更方便</p>
+              <p></p>
+              <p></p>
             </router-link>
           </div>
           <div class="inline-block item-3 shortbox" :style="backgroundObject.img8">
             <router-link to="" class="item s-item-3">
-              <p>预约保养</p>
-              <p>在线预约更方便</p>
+              <p></p>
+              <p></p>
             </router-link>
           </div>
         </div>
@@ -101,6 +101,7 @@
           }
         ],
         banner: [],
+        services: [],
         weather: {
           city: '',
           wearthimg: ''
@@ -116,6 +117,7 @@
         getBanner().then(res => {
           this.banner = res.data.data.toplist
           this.msg = res.data.data.brand[0].title
+          this.services = res.data.data.button
         })
         .catch(function (error) {
           console.log(error)
@@ -137,9 +139,7 @@
       }
     },
     created () {
-      if (!this.$store.state.app.bannerCached) {
-        this.fetchBanner()
-      }
+      this.fetchBanner()
       this.fetchWeather()
       this.getStatus()
     }
