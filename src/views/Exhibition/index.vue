@@ -5,7 +5,7 @@
     </keep-alive>
     <nav>
       <ul>
-        <li v-for="model in vehicles" :class="{active: index == cur}">
+        <li v-for="(model,index) in vehicles" :class="{active: index == cur}">
           {{model.name}}
         </li>
       </ul>

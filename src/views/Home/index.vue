@@ -31,36 +31,36 @@
       <span class="float-left">我的应用</span>
       <span class="float-right">管理></span>
     </div>
-    <div class="panel">
-      <div class="left backconfig" :style="backgroundObject.img1">
-        <router-link to="" class="item s-item">
-          <p>{{services[0].title}}</p>
-          <p></p>
-        </router-link>
-      </div>
-      <div class="right">
-        <div class="r-top" :style="backgroundObject.img3">
-          <router-link to="" class="item s-item-1">
-            <p></p>
-            <p></p>
+      <div class="panel">
+        <div class="left backconfig" :style="backgroundObject.img1">
+          <router-link to="" class="item s-item">
+            <p>{{services[0].title}}</p>
+            <p>{{services[0].sortname}}</p>
           </router-link>
         </div>
-        <div class="row">
-          <div class="inline-block item-2 shortbox" :style="backgroundObject.img4">
-            <router-link to="" class="item s-item-2">
-              <p></p>
-              <p></p>
+        <div class="right">
+          <div class="r-top" :style="backgroundObject.img3">
+            <router-link to="" class="item s-item-1">
+              <p>{{services[1].title}}</p>
+              <p>{{services[1].sortname}}</p>
             </router-link>
           </div>
-          <div class="inline-block item-3 shortbox" :style="backgroundObject.img8">
-            <router-link to="" class="item s-item-3">
-              <p></p>
-              <p></p>
-            </router-link>
+          <div class="row">
+            <div class="inline-block item-2 shortbox" :style="backgroundObject.img4">
+              <router-link to="" class="item s-item-2">
+                <p>{{services[2].title}}</p>
+                <p>{{services[2].sortname}}</p>
+              </router-link>
+            </div>
+            <div class="inline-block item-3 shortbox" :style="backgroundObject.img8">
+              <router-link to="" class="item s-item-3">
+                <p>{{services[3].title}}</p>
+                <p>{{services[3].sortname}}</p>
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -101,7 +101,12 @@
           }
         ],
         banner: [],
-        services: [],
+        services: [
+          {'title': '预约保养', 'sortname': '在线预约更方便'},
+          {'title': '预约保养', 'sortname': '在线预约更方便'},
+          {'title': '预约保养', 'sortname': '在线预约更方便'},
+          {'title': '预约保养', 'sortname': '在线预约更方便'}
+        ],
         weather: {
           city: '',
           wearthimg: ''
