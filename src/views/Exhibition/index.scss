@@ -47,3 +47,29 @@ nav {
     }
   }
 }
+.list {
+  width: 100%;
+  a {
+    display: block;
+    padding: 20px 15px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    img {
+      width: 4rem;
+    }
+    p {
+      color: #000;
+      line-height: 30px;
+      &:last-child {
+        color: #e84c3d;
+      }
+    }
+  }
+  ul {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+}

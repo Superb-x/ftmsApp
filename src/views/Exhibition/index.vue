@@ -5,11 +5,24 @@
     </keep-alive>
     <nav>
       <ul>
-        <li v-for="(model,index) in vehicles" :class="{active: index == cur}">
+        <li v-for="(model,index) in vehicles" :class="{active: index == cur}" @click="focused(index)">
           {{model.name}}
         </li>
       </ul>
     </nav>
+    <div class="list">
+      <template v-for="(model, index) in vehicles">
+        <ul :class="{active: index == cur}">
+            <li v-for="car in model.childs">
+              <router-link v-bind:to="car.name">
+                <img :src="car.thumb" alt="">
+                <p>{{car.name}}</p>
+                <p>{{car.price}}</p>
+              </router-link>
+            </li>
+        </ul>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -34,7 +47,11 @@
         getBrand().then(res => {
           this.banner = res.data.data.activt
           this.vehicles = res.data.data.vehicle
+          this.vehicles[3].name = '双擎'
         })
+      },
+      focused (i) {
+        this.cur = i
       }
     },
     created () {
