@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // component
-import Home from '@/views/Home/index'
+import Home from '@/views/Home/'
 import Exhibition from '@/views/Exhibition/index'
 import Car from '@/views/Car/index'
 import Service from '@/views/Service/index'
