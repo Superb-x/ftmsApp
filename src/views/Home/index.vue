@@ -68,6 +68,10 @@
   import Banner from '@/components/banner'
   import { getBanner, getWeather, getInfoStatus } from '@/api/home'
   import imgDate from './imageData'
+  import img1 from 's/img/home-icon/home-icon-welfare.png'
+  import img2 from 's/img/home-icon/home-icon-event.png'
+  import img3 from 's/img/home-icon/home-icon-finance.png'
+  import img4 from 's/img/home-icon/home-icon-news.png'
   export default {
     name: 'Home',
     data () {
@@ -77,25 +81,25 @@
         items: [
           {
             name: '车主福利',
-            url: 'static/images/home-icon/home-icon-welfare.png',
+            url: img1,
             bg: 'background: #34b7f7',
             path: '/panel/welfare'
           },
           {
             name: '促销活动',
-            url: 'static/images/home-icon/home-icon-event.png',
+            url: img2,
             bg: 'background: #f0dd3a',
             path: '/panel/activity'
           },
           {
             name: '金融产品',
-            url: 'static/images/home-icon/home-icon-finance.png',
+            url: img3,
             bg: 'background: #ff6966',
             path: '/panel/finance'
           },
           {
             name: '品牌宣传',
-            url: 'static/images/home-icon/home-icon-news.png',
+            url: img4,
             bg: 'background: #65c730',
             path: '/panel/brand'
           }

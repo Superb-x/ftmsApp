@@ -1,5 +1,5 @@
 <template>
-  <h2>{{msg}}</h2>
+  <h2 class="title">{{msg}}</h2>
 </template>
 
 <script>
@@ -13,6 +13,6 @@
   }
 </script>
 
-<style>
-
+<style lang="scss">
+  @import "car";
 </style>
